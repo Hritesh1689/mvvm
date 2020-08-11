@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="recyclerSelectedColorViewModel"
+            type="com.agicent.mvvmdemo.viewmodel.RecyclerSelectedColorViewModel" />
+    </data>
+    
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="@dimen/_30sdp"
+    android:id="@+id/layout_root"
+    android:layout_height="@dimen/_30sdp"
+    android:background="@color/white"
+   >
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_3sdp"
+        app:cardUseCompatPadding="false"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/color_layout"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:imageUrl="@{recyclerSelectedColorViewModel.imageUrl}"
+                android:layout_height="@dimen/_13sdp">
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/color_quantity_layout"
+                android:layout_width="match_parent"
+                android:layout_below="@id/color_layout"
+                app:layout_constraintTop_toBottomOf="@id/color_layout"
+                android:layout_height="@dimen/_12sdp">
+
+
+                <TextView
+                    android:id="@+id/color_quantity_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:textSize="@dimen/_8sdp"
+                    android:textColor="#FF0000"
+                    android:text="@{recyclerSelectedColorViewModel.colorQuantity}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_centerInParent="true"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

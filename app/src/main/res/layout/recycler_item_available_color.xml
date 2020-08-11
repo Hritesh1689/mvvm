@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="recyclerColorViewModel"
+            type="com.agicent.mvvmdemo.viewmodel.RecyclerColorViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="@dimen/_40sdp"
+    android:id="@+id/layout_root"
+    android:layout_height="@dimen/_45sdp"
+    android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardElevation="@dimen/_2sdp"
+            card_view:cardCornerRadius="@dimen/_4sdp"
+            app:cardUseCompatPadding="true"
+            android:layout_height="@dimen/_30sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/color_layout"
+                android:layout_width="match_parent"
+                app:imageUrl="@{recyclerColorViewModel.imageUrl}"
+                android:layout_height="match_parent">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

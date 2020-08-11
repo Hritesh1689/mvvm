@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix">
+
+    <data>
+        <variable
+            name="recyclerSizegroupViewModel"
+            type="com.agicent.mvvmdemo.viewmodel.RecyclerSizegroupViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="@dimen/_70sdp"
+    android:id="@+id/layout_root"
+    android:layout_height="@dimen/_90sdp"
+    android:background="@color/white"
+    >
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardUseCompatPadding="false"
+       >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/size_layout"
+            android:layout_width="match_parent"
+            android:background="@color/dark"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="@dimen/_30sdp">
+
+            <TextView
+                android:id="@+id/size_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                android:text="@{recyclerSizegroupViewModel.size}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/price_layout"
+            android:layout_width="match_parent"
+            android:layout_below="@id/size_layout"
+            app:layout_constraintTop_toBottomOf="@id/size_layout"
+            android:layout_height="@dimen/_40sdp">
+
+
+
+                <TextView
+                    android:id="@+id/item_price_textview"
+                    fontPath="fonts/Lato-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:layout_below="@id/price_textView"
+                    app:layout_constraintTop_toBottomOf="@id/price_textView"
+                    android:text="@{recyclerSizegroupViewModel.priceAfterDiscount}"
+
+                    android:background="@drawable/strike_through"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    android:layout_marginTop="0dp"
+                    android:drawableLeft="@drawable/rupees_black_icon"
+                    android:textSize="@dimen/_8sdp" />
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/price_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_13sdp"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@{recyclerSizegroupViewModel.priceBeforeDiscount}"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:drawableLeft="@drawable/rupees_green_icon"
+                android:textColor="@color/green"
+               />
+
+
+            <TextView
+                android:id="@+id/sold_out_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SOLD OUT"
+                android:textStyle="italic"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="#FF0000"
+                android:layout_centerInParent="true"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

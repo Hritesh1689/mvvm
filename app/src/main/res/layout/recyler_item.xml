@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemmodel"
+            type="com.agicent.mvvmdemo.viewmodel.RecyclerItemViewModel" />
+
+        <variable
+            name="position"
+            type="java.lang.Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{()->itemmodel.onItemClick(position)}"
+            card_view:cardCornerRadius="@dimen/_8sdp"
+            card_view:cardElevation="5dp"
+            card_view:cardMaxElevation="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_item"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_alignParentTop="true"
+                    android:scaleType="fitXY"
+                    app:imageUrl="@{itemmodel.imageUrl}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/brand_design_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_item"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@{itemmodel.designCode}"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image_item" />
+
+                <TextView
+                    android:id="@+id/item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_item"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                   android:text="@{itemmodel.itemname}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/brand_design_code"
+                    app:layout_constraintTop_toBottomOf="@id/image_item"
+                    app:layout_constraintTop_toTopOf="@id/brand_design_code" />
+
+                <TextView
+                    android:id="@+id/category_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/brand_design_code"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:maxLines="1"
+                    android:text="@{itemmodel.categoryname}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/brand_design_code" />
+
+                <TextView
+                    android:id="@+id/category_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:maxLines="1"
+                    android:text="(Category)"
+                    android:textColor="#8D8D8D"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toEndOf="@id/category_name"
+                    app:layout_constraintTop_toTopOf="@id/category_name" />
+
+
+                <TextView
+                    android:id="@+id/brand_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@{itemmodel.brandname}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/category_name" />
+
+                <TextView
+                    android:id="@+id/brand_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/brand_name"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_toRightOf="@+id/brand_name"
+                    android:maxLines="1"
+                    android:text="(brand)"
+                    android:textColor="#8D8D8D"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toEndOf="@id/brand_name"
+                    app:layout_constraintTop_toTopOf="@id/brand_name" />
+
+                <TextView
+                    android:id="@+id/item_price_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:drawableLeft="@drawable/rupees_green_icon"
+                    android:text="@{itemmodel.minprice}"
+                    android:textColor="#32CD32"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/brand_name" />
+
+                <TextView
+                    android:id="@+id/item_price_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/rupees_green_icon"
+                    android:text="@{itemmodel.maxprice}"
+                    android:textColor="#32CD32"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toEndOf="@id/item_price_min"
+                    app:layout_constraintTop_toTopOf="@id/item_price_min" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

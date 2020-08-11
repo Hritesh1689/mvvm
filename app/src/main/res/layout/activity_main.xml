@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    tools:ignore="MissingPrefix">
+
+    <data>
+
+
+        <variable
+            name="viewmodel"
+            type="com.agicent.mvvmdemo.viewmodel.ActivityMainViewModel" />
+    </data>
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layouta"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        >
+
+        <include
+            android:id="@+id/toolbar1"
+            layout="@layout/bar_layout_home_filter"
+            app:viewmodel="@{viewmodel}" />
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginEnd="-65dp"
+            android:layout_marginRight="-65dp"
+
+            android:clickable="true"
+
+            android:fitsSystemWindows="true"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingTop="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+                <ImageView
+                    android:id="@+id/cross_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:onClick="@{()->viewmodel.menuClicked()}"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/close_cart" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    app:layout_constraintTop_toBottomOf="@id/cross_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_19sdp"
+                    android:src="@drawable/profile_placeholder_signup" />
+
+                <TextView
+                    android:id="@+id/retailer_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/profile_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_21sdp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/upper_options"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/retailer_name"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView_orderhistory"
+                        fontPath="fonts/Lato-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/order_history"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp" />
+
+                    <TextView
+                        android:id="@+id/textView_profile"
+                        fontPath="fonts/Lato-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        app:layout_constraintTop_toBottomOf="@id/textView_orderhistory"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:onClick="@{()->viewmodel.OnProfileClick()}"
+                        android:text="@string/profile"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_1sdp"
+                    app:layout_constraintTop_toBottomOf="@id/upper_options"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/_22sdp"
+                    android:background="#D0D0D1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/lower_options"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_line"
+                    app:layout_constraintTop_toBottomOf="@id/view_line"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView_payment"
+                        fontPath="fonts/Lato-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/payment"
+                        android:onClick="@{()->viewmodel.OnPaymentClick()}"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp" />
+
+
+                    <TextView
+                        android:id="@+id/textView_contactus"
+                        fontPath="fonts/Lato-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/contact_us"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView_payment"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp" />
+
+
+                    <TextView
+                        android:id="@+id/textView_support"
+                        fontPath="fonts/Lato-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView_contactus"
+                        android:text="@string/support"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <ImageView
+                    android:id="@+id/app_icon"
+                    android:layout_width="49dp"
+                    android:layout_height="47dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/signup_logo" />
+
+                <TextView
+                    android:id="@+id/version_no"
+                    fontPath="fonts/Lato-Light.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="version 1.0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.navigation.NavigationView>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

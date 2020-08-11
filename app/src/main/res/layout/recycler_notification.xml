@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="recyclerNotificationViewModel"
+            type="com.agicent.mvvmdemo.viewmodel.RecyclerNotificationViewModel" />
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingPrefix"
+    android:background="@color/white"
+    >
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/upper_card"
+    android:layout_width="0dp"
+    app:cardElevation="@dimen/_5sdp"
+    app:cardUseCompatPadding="false"
+    android:elevation="@dimen/_5sdp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:id="@+id/notification_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bell_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+
+        <TextView
+            android:id="@+id/notification_title"
+            android:layout_width="0dp"
+            fontPath="fonts/Lato-Regular.ttf"
+            android:textSize="@dimen/_14sdp"
+            android:maxLines="2"
+            app:layout_constraintStart_toEndOf="@id/notification_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_toRightOf="@id/notification_icon"
+            android:text="@{recyclerNotificationViewModel.notificationTitle}"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_height="wrap_content" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linear"
+            android:layout_width="0dp"
+            android:layout_below="@id/notification_icon"
+            app:layout_constraintTop_toBottomOf="@id/notification_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/notification_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@{recyclerNotificationViewModel.notificationContent}"
+
+                android:maxLines="3"
+                fontPath="fonts/Lato-Light.ttf"
+                android:layout_below="@id/linear"/>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/notification_content">
+
+            <TextView
+                android:id="@+id/notification_time"
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                fontPath="fonts/Lato-Light.ttf"
+                android:textSize="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@{recyclerNotificationViewModel.notificationDate}"
+                android:layout_alignParentStart="true"
+                android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:id="@+id/for_item_notification"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/yellow"
+                    fontPath="fonts/Lato-Light.ttf"
+                    android:textSize="@dimen/_11sdp"
+                    android:visibility="gone"
+                    android:paddingRight="@dimen/_4sdp"
+                    android:paddingLeft="@dimen/_4sdp"
+                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:text="View this Design#"
+                    android:layout_height="wrap_content" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_below="@id/linear"
+            app:imageUrl="@{recyclerNotificationViewModel.imageUrl}"
+            app:layout_constraintTop_toBottomOf="@id/linear"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/upper_card"
+        android:layout_below="@id/upper_card"
+        android:background="@color/serach_bar_color"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

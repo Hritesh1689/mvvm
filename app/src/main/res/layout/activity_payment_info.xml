@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="paymentInfoViewModel"
+            type="com.agicent.mvvmdemo.viewmodel.PaymentInfoViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.PaymentInfoActivity"
+    tools:ignore="MissingPrefix">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="@dimen/_5sdp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/back_icon"
+                android:onClick="@{()->paymentInfoViewModel.onBackPress()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                fontPath="fonts/Athelas-Bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Info"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/_18sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@color/dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:id="@+id/payment_details_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/payment_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/info_text"
+                fontPath="fonts/Lato-Light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="Using below payment details and payTM, you can directly make payment to us."
+                android:textColor="#3C3C3C"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/payment_details_textview" />
+
+            <TextView
+                android:id="@+id/bank_details_textview"
+                fontPath="fonts/Lato-Light.ttf"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/bank_details"
+                android:textColor="#8D8D8D"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/info_text" />
+
+
+            <TextView
+                android:id="@+id/company_name_textview"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@{paymentInfoViewModel.companyname}"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bank_details_textview" />
+
+            <TextView
+                android:id="@+id/company_name_hint"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/company_name_textview"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text="@string/company_name_hint"
+                android:textColor="#8D8D8D"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toEndOf="@id/company_name_textview"
+                app:layout_constraintTop_toTopOf="@id/company_name_textview" />
+
+            <TextView
+                android:id="@+id/account_no_textview"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@{paymentInfoViewModel.accountno}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/company_name_textview" />
+
+            <TextView
+                android:id="@+id/account_no_hint"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/account_no_textview"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text="@string/account_no_hint"
+                android:textColor="#8D8D8D"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toEndOf="@id/account_no_textview"
+                app:layout_constraintTop_toTopOf="@id/account_no_textview" />
+
+            <TextView
+                android:id="@+id/ifsc_code_textview"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@{paymentInfoViewModel.ifsccode}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/account_no_textview" />
+
+            <TextView
+                android:id="@+id/ifsc_code_hint"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text="@string/ifsc_code_hint"
+                android:textColor="#8D8D8D"
+                android:textSize="@dimen/_13sdp"
+
+                app:layout_constraintStart_toEndOf="@id/ifsc_code_textview"
+                app:layout_constraintTop_toTopOf="@id/ifsc_code_textview" />
+
+            <TextView
+                android:id="@+id/bank_name_textview"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ifsc_code_textview"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@{paymentInfoViewModel.bankname}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ifsc_code_textview" />
+
+
+            <TextView
+                android:id="@+id/bank_name_hint"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/bank_name_textview"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_toRightOf="@id/bank_name_textview"
+                android:text="@string/bank_name_hint"
+                android:textColor="#8D8D8D"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toEndOf="@id/bank_name_textview"
+                app:layout_constraintTop_toTopOf="@id/bank_name_textview" />
+
+            <TextView
+                android:id="@+id/branch_name_textview"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bank_name_textview"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@{paymentInfoViewModel.branchname}"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bank_name_textview" />
+
+            <TextView
+                android:id="@+id/branch_name_hint"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text="@string/branch_hint"
+                android:textColor="#8D8D8D"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toEndOf="@id/branch_name_textview"
+                app:layout_constraintTop_toTopOf="@id/branch_name_textview" />
+
+            <TextView
+                android:id="@+id/payment_number_textview"
+                fontPath="fonts/Lato-Light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/paytm_numbers"
+                android:textColor="#8D8D8D"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/branch_name_hint" />
+
+            <TextView
+                android:id="@+id/paytm_textview"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/payment_number_textview"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@{paymentInfoViewModel.paytmno}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/payment_number_textview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:indeterminateOnly="true"
+        android:indeterminateTint="@color/yellow"
+        android:max="15"
+        android:minWidth="410dp"
+        android:minHeight="3dp"
+        android:progress="1"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar1" />
+
+
+    <ScrollView
+        android:id="@+id/placeholder_layout_internet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/no_internet_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:src="@drawable/no_connection" />
+
+            <TextView
+                android:id="@+id/oops_text"
+                fontPath="fonts/Nunito-ExtraBold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@id/no_internet_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/Oops"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp" />
+
+            <TextView
+                android:id="@+id/info_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@id/oops_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/slow_or_no_internet_connection"
+                android:textColor="@color/textColor_grey"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:id="@+id/info_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/please_check_your_internet_settings"
+                app:layout_constraintTop_toBottomOf="@id/info_upper"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/textColor_grey"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:id="@+id/info_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/or_try_again"
+                android:textColor="@color/textColor_grey"
+                app:layout_constraintTop_toBottomOf="@id/info_middle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/_13sdp" />
+
+
+            <Button
+                android:id="@+id/try_again_button"
+                fontPath="fonts/Lato-Light.ttf"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:layout_constraintTop_toBottomOf="@id/info_lower"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/confirm_button"
+                android:text="Try Again"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14sdp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

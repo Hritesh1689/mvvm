@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="addressViewModel"
+            type="com.agicent.mvvmdemo.viewmodel.RecyclerAddressViewModel" />
+    </data>
+    
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    tools:ignore="MissingPrefix"
+    android:padding="@dimen/_5sdp"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+            android:id="@+id/address_textview"
+            android:layout_width="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:text="@{addressViewModel.address}"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/edit_icon"
+            android:textColor="@color/black"
+            android:layout_toLeftOf="@id/edit_icon"
+            android:maxLines="3"
+            android:ellipsize="end"
+            fontpath="fonts/Lato-Light.ttf"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/edit_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintEnd_toStartOf="@id/delete_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/edit_cart_icon"/>
+
+        <ImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/delete_item_icon"/>
+
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/layout_top_icons"
+        app:layout_constraintTop_toBottomOf="@id/address_textview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="#cccccd"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="black">#000102</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00FFFFFF</color>
+    <!--dont have account text color-->
+    <!--login-->
+    <color name="dont_acc_text_color">#828182</color>
+    <color name="lines_color">#D0D0D1</color>
+    <color name="hints_color">#707070</color>
+    <color name="green">#32CD32</color>
+    <color name="serach_bar_color">#e4e4e7</color>
+
+
+    <color name="text_color_heding">#42404F</color>
+    <!--sigup-->
+    <color name="eyes_color">#727272</color>
+    <color name="red">#0000FF</color>
+    <color name="yellow">#FF7904</color>
+    <color name="disable_button_background_color">#8D8D8D</color>
+
+    <color name="dark">#F5F5F5</color>
+
+    <color name="textColor_grey">#65748E</color>
+</resources>

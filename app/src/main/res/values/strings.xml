@@ -1,0 +1,215 @@
+<resources>
+    <string name="app_name">MVVMDemo</string>
+
+    <!--if your Facebook App ID is 1234567, you should use ak1234567-->
+    <string name="ak_login_protocol_scheme">ak2116364821986869</string>
+
+
+    <!--login screen-->
+    <string name="password">Password</string>
+    <string name="Log_in_to_your">Log in to your</string>
+    <string name="account">account</string>
+    <string name="Email">Email</string>
+    <string name="FORGOT_PASSWORD">FORGOT PASSWORD?</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="Dont_have_account">Don\'t have account?</string>
+    <string name="SIGN_UP">SIGN UP</string>
+
+
+    <!--sign_up1-->
+
+    <string name="Sign_up_to_connect">Sign up to connect</string>
+    <string name="with_Kolaveri">with Kolaveri</string>
+    <string name="Name">Name</string>
+    <string name="Phone_No">Phone No</string>
+    <string name="Address">Address</string>
+    <string name="Already_have_account">Already have account?</string>
+
+
+    <!--SIGN_UP2-->
+    <string name="You_are_all_set">You are all set</string>
+    <string name="Take_a_minute_to_upload">Take a minute to upload</string>
+    <string name="your_photo">your photo</string>
+    <string name="GST_Number">GST Number</string>
+    <string name="IM_DONE">I\'M DONE</string>
+
+    <!--splash-->
+    <string name="kolaveri">Kolaveri Prime</string>
+    <string name="app_Slogan">THE COMPLETE FASHION STATION</string>
+    <string name="Please_enter_mail">Please enter your email address</string>
+    <string name="Please_enter_Password">Please enter password</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="Password_must_be_3_characters">Password must be of atleast 3 characters</string>
+    <string name="Please_enter_phoneno">Please enter Phone Number</string>
+    <string name="Please_enter_address">Please enter address</string>
+    <string name="Please_enter_name">Please enter your name</string>
+    <string name="name_should_be_3_chars_long">Name must be of atleast 3 characters</string>
+    <string name="invalid_email_address">Invalid email address</string>
+    <string name="invalid_phone_no">Invalid phone number</string>
+    <string name="Connect_with">Connect with</string>
+    <string name="Kolaveri">Kolaveri Prime</string>
+    <string name="Phone_number">Phone Number</string>
+    <string name="personal">Personal Details</string>
+    <string name="detail">Detail</string>
+    <string name="address1">Address 1</string>
+    <string name="Address2">Address 2(optional)</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="Pincode">Pincode</string>
+    <string name="Continue">Continue</string>
+    <string name="search_for_items">Search for Brands, Items (Shirt, Jeans........)</string>
+    <string name="Collection">COLLECTIONS</string>
+    <string name="dialogMessage">Loading</string>
+    <string name="dialogMessage_updating">Updating</string>
+    <string name="dialogMessage_creating">Creating</string>
+    <string name="dialogTitle">Please wait....</string>
+
+    <string name="your_Account_has_been_Blocked">Your account has been temporarily suspended, please contact Pollynett support team - support@kolaveriprime.com</string>
+    <string name="failure_msg">Something went wrong, Please try again.</string>
+    <string name="done">Done</string>
+    <string name="please_enter_address">Please enter your address</string>
+    <string name="please_enter_city">Please enter your city</string>
+    <string name="please_enter_state">Please enter your state</string>
+    <string name="please_enter_pincode">Please enter your pincode</string>
+    <string name="phone_number_required">Phone number is required</string>
+    <string name="Please_enter_gstNo">Please enter GST number</string>
+    <string name="profile_pic_uploaded">Profile picture has been updated successfully</string>
+    <string name="profile_updated">Profile has been updated successfully</string>
+    <string name="order_history">My Orders</string>
+    <string name="profile">My Profile</string>
+    <string name="payment">Payment Info</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="support">Support</string>
+    <string name="mail_caps">EMAIL</string>
+    <string name="phoneno_caps">PHONE NUMBER</string>
+    <string name="gst_caps">GST NUMBER</string>
+    <string name="address_caps">ADDRESS</string>
+    <string name="newaddress_caps">NEW ADDRESS</string>
+    <string name="Order_confirm">Order Placed</string>
+    <string name="Order_placed">Your order has been successfully placed</string>
+    <string name="Continue_purchasing">CONTINUE PURCHASING</string>
+    <string name="retype_GST_Number">Retype GST Number</string>
+    <string name="Please_reenter_gstNo">Please Re-enter GST Number</string>
+    <string name="Your_re_entry_doesnt_match">Your re-entry doesn\'t match</string>
+    <string name="landmark">Landmark(optional)</string>
+    <string name="whatspp">Whatsapp Number</string>
+    <string name="please_enter_whatsappNo">Please enter your whatsapp number</string>
+    <string name="Order_id">Order Id :</string>
+    <string name="expected_delivery">Expected Delivery :</string>
+    <string name="order_placed">Order Placed</string>
+    <string name="you_have_placed_your_order">You have placed your order</string>
+    <string name="order_accepted">Order Confirmed</string>
+    <string name="we_have_accepted_your_order">We have confirmed your order</string>
+    <string name="Dispatch">Dispatched</string>
+    <string name="your_order_dispatched">Your order has been dispatched</string>
+    <string name="pincode_must_be">Pincode must be of atleast 6 characters</string>
+    <string name="Call">CALL</string>
+    <string name="Location">LOCATION</string>
+
+
+    <string name="address">Address</string>
+    <string name="contact_info">Contact info</string>
+
+
+    <string name="payment_details">PAYMENT DETAILS</string>
+    <string name="bank_details">Bank Detail</string>
+    <string name="account_no_hint">(Account No)</string>
+    <string name="ifsc_code_hint">(IFSC Code)</string>
+    <string name="branch_hint">(Branch)</string>
+    <string name="paytm_numbers">Paytm Number</string>
+    <string name="Filter_by">Filter by:</string>
+    <string name="Apply">APPLY</string>
+    <string name="available_colors">AVAILABLE COLORS</string>
+    <string name="available_size_group">AVAILABLE SIZE GROUP</string>
+    <string name="Add_to_cart">ADD TO CART</string>
+    <string name="buy_now">BUY  NOW</string>
+    <string name="more_info">MORE INFORMATION</string>
+    <string name="fleece_hemo">fleece,hemo,organic cotton</string>
+    <string name="on_back__button_pressed">Please click BACK again to exit</string>
+    <string name="update_Address">Update Address</string>
+    <string name="whatsapp_caps">WHATSAPP NUMBER</string>
+    <string name="please_enter_tag">Please enter tag</string>
+    <string name="your_selected_sizes">Your Selected Sizes</string>
+    <string name="notification_event">Notification event</string>
+
+
+    <string name="ok">yes</string>
+    <string name="OK">OK</string>
+    <string name="no">no</string>
+    <string name="alert_msg_logout">Are you sure you want to Sign Out?</string>
+    <string name="alert_msg_delete">Are you sure you want to Delete this item?</string>
+    <string name="size_group">Size Group</string>
+    <string name="price">Price</string>
+    <string name="add_quant_and_color"><![CDATA[ADD QUANTITY & COLOR]]></string>
+    <string name="tap_to_enter">Tap to enter unit(s)</string>
+    <string name="caps_done">DONE</string>
+    <string name="Confirm_order">CONFIRM ORDER</string>
+    <string name="amt_to_be_paid">Amount to be Paid</string>
+    <string name="Shipping">Shipping</string>
+    <string name="shipping_address_caps">SHIPPING ADDRESS</string>
+    <string name="enter_transporter_name">Enter Transporter Name</string>
+    <string name="enter_additional_remark">ENTER ADDITIONAL REMARK</string>
+    <string name="proceed">PROCEED</string>
+    <string name="price_details">PRICE DETAILS</string>
+    <string name="total_ammount">Total Amount</string>
+    <string name="total_discount">Total Discount</string>
+    <string name="total_ammount_after_discount">Total Amount</string>
+    <string name="total_gst_mmount">Total GST Amount</string>
+    <string name="final_ammount">Final Amount to be Paid</string>
+    <string name="Choose_one">CHOOSE PHONE NUMBER</string>
+    <string name="send">SEND</string>
+    <string name="order_id">Order ID : </string>
+    <string name="location">LOCATION</string>
+    <string name="track_order">TRACK ORDER</string>
+    <string name="cancel_order">CANCEL ORDER</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="title_activity_map">Map</string>
+    <string name="GIFTS">YOUR GIFT(Along with this order)</string>
+    <string name="gst_number_must_be">GST number must be of atleast 15 char</string>
+    <string name="no_results_found">No result found</string>
+    <string name="no_cart_found">No Items in Cart</string>
+    <string name="version">version</string>
+    <string name="alert_msg_delete_cart_item">Are you sure you want to cancel this order?</string>
+    <string name="after_discount">(after discount)</string>
+    <string name="support_text">We are always there for support !</string>
+    <string name="support_text2">Your feedback is as important as you</string>
+    <string name="support_text3">so feel free to drop us a line below :</string>
+    <string name="profile_uploading">Uploading</string>
+    <string name="account_has_been_Deactivated">Your account has been deactivated</string>
+    <string name="please_enter_your_message">Please enter your message</string>
+
+    <string name="Oops">Oops!</string>
+    <string name="slow_or_no_internet_connection">Slow or no internet connection,</string>
+    <string name="please_check_your_internet_settings">Please check your internet settings</string>
+    <string name="or_try_again">or try again.</string>
+    <string name="try_again">try again</string>
+    <string name="invalid_GST_number">Invalid GST Number</string>
+    <string name="no_results_found1">No Active Orders</string>
+    <string name="no_past_order">No Past Orders</string>
+    <string name="deletion_alert_address">Are you sure you want to delete this address?</string>
+    <string name="Order_delivered_and_cancled">Orders delivered and cancelled by you</string>
+    <string name="will_be_shown_here">will be shown here.</string>
+    <string name="additional_remark">ADDITIONAL REMARK</string>
+    <string name="transporter_name">TRANSPORTER NAME</string>
+    <string name="Please_enter_transporter_name">Please enter transporter name</string>
+    <string name="placing_your_order">Placing your order</string>
+    <string name="adding_to_cart">Adding to cart</string>
+    <string name="editing_cart">Updating the cart</string>
+    <string name="something_went_wrong">Something went wrong.</string>
+    <string name="pls_try_again">Please try again</string>
+    <string name="looks_like_you_have_not_added">Looks like you have not added any item to</string>
+    <string name="any_item_to">your cart.Lets add some items</string>
+    <string name="lets_add_some_item">Lets add some items</string>
+    <string name="we_cannot_find">We can\'t find any item</string>
+    <string name="mathcing_your_search">matching your search.</string>
+    <string name="there_are_no_recent_order">Looks like you haven\'t placed any order.</string>
+    <string name="Lets_place">Let\'s add some items</string>
+    <string name="reffered_by_brand">Referred by Brand</string>
+    <string name="Select_a_brand">Select a brand</string>
+    <string name="exc_transportation">(Exc. transportation charges)</string>
+    <string name="Pollynett">Pollynett</string>
+    <string name="company_name_hint">(Company Name)</string>
+    <string name="bank_name_hint">Bank Name</string>
+
+</resources>
