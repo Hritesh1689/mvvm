@@ -30,6 +30,9 @@ import java.util.TreeMap;
 public class LittleMonk {
     public static void main(String args[]) throws Exception {
 
+       // StringBuilder out=new StringBuilder();
+
+
 //        Scanner s = new Scanner(System.in);
 //
 //        int no = s.nextInt();
@@ -1387,4 +1390,7 @@ class MyHashSet {
         if(buckets[i]==null || buckets[i].indexOf(key)==-1) return false;
         else return true;
     }
+
+
+
 }
